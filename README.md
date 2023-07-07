@@ -1,4 +1,4 @@
-# HA-Liferay-DXP-Deoloyment
+# HA-Liferay-DXP-Deployment
 
 Reproduction steps:
 
