@@ -1,0 +1,33 @@
+version: '3'
+services:
+  liferay1:
+    image: liferay/dxp:latest
+    restart: unless-stopped  
+    environment:
+      - LIFERAY_TOMCAT_AJP_PORT=8009
+      - LIFERAY_TOMCAT_JVM_ROUTE=worker1
+      - LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true
+    networks:
+      - liferay_network
+
+  liferay2:
+    image: liferay/dxp:latest
+    restart: unless-stopped
+    environment:
+      - LIFERAY_TOMCAT_AJP_PORT=8009
+      - LIFERAY_TOMCAT_JVM_ROUTE=worker2
+      - LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true
+    networks:
+      - liferay_network
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - liferay_network
+networks:
+  liferay_network:
