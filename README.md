@@ -17,4 +17,4 @@ If we shut down the currently active node's container, and refresh the site, we 
 By clicking on the 'Sign in" button, you can observe the log in pop-up while either node is in use.:
 ![image](https://github.com/pomee4/HA-Liferay-DXP-Deoloyment/assets/13985863/b37f787c-ffce-4d08-9873-fa66cd966473)
 
-Repeatedly refreshing the page results in the active node changing, but it does not occur every time.
+Repeatedly refreshing the page results in the last used node kept to be using and not switchinh between the two while shutting down the active node results in the onther one to be used.
