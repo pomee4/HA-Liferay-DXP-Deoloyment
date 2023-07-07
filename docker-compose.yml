@@ -4,7 +4,6 @@ services:
     image: liferay/dxp:latest
     restart: unless-stopped  
     environment:
-      - LIFERAY_TOMCAT_AJP_PORT=8009
       - LIFERAY_TOMCAT_JVM_ROUTE=worker1
       - LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true
     networks:
@@ -14,7 +13,6 @@ services:
     image: liferay/dxp:latest
     restart: unless-stopped
     environment:
-      - LIFERAY_TOMCAT_AJP_PORT=8009
       - LIFERAY_TOMCAT_JVM_ROUTE=worker2
       - LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true
     networks:
